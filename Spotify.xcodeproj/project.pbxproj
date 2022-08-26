@@ -29,6 +29,8 @@
 		0574438A28B67514009EA6A2 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574438928B67514009EA6A2 /* AudioTrack.swift */; };
 		0574438C28B6752C009EA6A2 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574438B28B6752C009EA6A2 /* Artist.swift */; };
 		0574438E28B67535009EA6A2 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574438D28B67535009EA6A2 /* UserProfile.swift */; };
+		05CDD84628B8F9930045623F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDD84528B8F9930045623F /* Constants.swift */; };
+		05CDD84828B8FC7B0045623F /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CDD84728B8FC7B0045623F /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		0574438928B67514009EA6A2 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		0574438B28B6752C009EA6A2 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		0574438D28B67535009EA6A2 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		05CDD84528B8F9930045623F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		05CDD84728B8FC7B0045623F /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 				0574435A28B66863009EA6A2 /* Assets.xcassets */,
 				0574435128B66862009EA6A2 /* AppDelegate.swift */,
 				0574435328B66862009EA6A2 /* SceneDelegate.swift */,
+				05CDD84528B8F9930045623F /* Constants.swift */,
+				05CDD84728B8FC7B0045623F /* Extentions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 				0574438A28B67514009EA6A2 /* AudioTrack.swift in Sources */,
 				0574435628B66862009EA6A2 /* HomeViewController.swift in Sources */,
 				0574437428B6719D009EA6A2 /* AuthViewController.swift in Sources */,
+				05CDD84628B8F9930045623F /* Constants.swift in Sources */,
 				0574435228B66862009EA6A2 /* AppDelegate.swift in Sources */,
 				0574438E28B67535009EA6A2 /* UserProfile.swift in Sources */,
+				05CDD84828B8FC7B0045623F /* Extentions.swift in Sources */,
 				0574437028B6715F009EA6A2 /* LibraryViewController.swift in Sources */,
 				0574438C28B6752C009EA6A2 /* Artist.swift in Sources */,
 				0574437E28B671ED009EA6A2 /* PlaylistViewController.swift in Sources */,
@@ -411,6 +419,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spotify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spotify;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -437,6 +446,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Spotify/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Spotify;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
