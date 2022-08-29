@@ -122,6 +122,8 @@ final class AuthManager {
             return
         }
         
+        
+        
         guard shouldRefreshToken else {
             completion(true)
             return

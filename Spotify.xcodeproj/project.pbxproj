@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050AD58628BBBDA800607DB0 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050AD58528BBBDA800607DB0 /* SettingsModels.swift */; };
 		0574435228B66862009EA6A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574435128B66862009EA6A2 /* AppDelegate.swift */; };
 		0574435428B66862009EA6A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574435328B66862009EA6A2 /* SceneDelegate.swift */; };
 		0574435628B66862009EA6A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574435528B66862009EA6A2 /* HomeViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050AD58528BBBDA800607DB0 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		0574434E28B66862009EA6A2 /* Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0574435128B66862009EA6A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0574435328B66862009EA6A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				0574438B28B6752C009EA6A2 /* Artist.swift */,
 				0574438D28B67535009EA6A2 /* UserProfile.swift */,
 				05D515B128BA9D9E00D8DCED /* AuthResponse.swift */,
+				050AD58528BBBDA800607DB0 /* SettingsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				0574438828B67505009EA6A2 /* Playlist.swift in Sources */,
 				0574438228B67224009EA6A2 /* AuthManager.swift in Sources */,
 				0574438028B67205009EA6A2 /* SearchResultsViewController.swift in Sources */,
+				050AD58628BBBDA800607DB0 /* SettingsModels.swift in Sources */,
 				0574437628B671A8009EA6A2 /* WelcomeViewController.swift in Sources */,
 				0574437A28B671D1009EA6A2 /* ProfileViewController.swift in Sources */,
 				0574436C28B67118009EA6A2 /* TabBarViewController.swift in Sources */,
