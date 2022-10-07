@@ -14,7 +14,6 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
         imageView.contentMode = .scaleAspectFit
-//        imageView.layer.borderWidth = 1
         
         return imageView
     }()
@@ -23,7 +22,6 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24, weight: .semibold)
         label.numberOfLines = 0
-//        label.layer.borderWidth = 1
         
         return label
     }()
@@ -32,7 +30,6 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .light)
         label.numberOfLines = 0
-//        label.layer.borderWidth = 1
         
         return label
     }()
@@ -41,7 +38,6 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.numberOfLines = 0
-//        label.layer.borderWidth = 1
 
         return label
     }()

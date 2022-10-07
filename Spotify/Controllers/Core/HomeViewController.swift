@@ -9,8 +9,8 @@ import UIKit
 
 enum BrowseSectionType {
     case newReleases(viewModels: [NewReleasesCellViewModel])
-    case featuredPlaylists(viewModels: [NewReleasesCellViewModel])
-    case recommendedTracks(viewModels: [NewReleasesCellViewModel])
+    case featuredPlaylists(viewModels: [FeaturedPlaylistCellViewModel])
+    case recommendedTracks(viewModels: [RecommendedTrackCellViewModel])
 }
 
 class HomeViewController: UIViewController {
@@ -160,8 +160,19 @@ class HomeViewController: UIViewController {
                                             numberOfTracks: $0.total_tracks,
                                             artistName: $0.artists.first?.name ?? "unknown")
         })))
-        sections.append(.featuredPlaylists(viewModels: []))
-        sections.append(.recommendedTracks(viewModels: []))
+        
+        sections.append(.featuredPlaylists(viewModels: plalists.compactMap({
+            return FeaturedPlaylistCellViewModel(name: $0.name,
+                                                 artworkURL: URL(string: $0.images.first?.url ?? ""),
+                                                 creatorName: $0.owner.display_name)
+        })))
+        
+        sections.append(.recommendedTracks(viewModels: tracks.compactMap({
+            return RecommendedTrackCellViewModel(name: $0.name,
+                                                 artistName: $0.artists.first?.name ?? "-" ,
+                                                 artworkURL: URL(string: $0.album.images.first?.url ?? ""))
+        })))
+        
         collectionView.reloadData()
     }
     
@@ -205,21 +216,23 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             cell.configure(with: viewModel)
             return cell
 
-        case .featuredPlaylists(_):
+        case .featuredPlaylists(let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier,
                                                                 for: indexPath) as? FeaturedPlaylistCollectionViewCell else {
                 return UICollectionViewCell()
             }
             
-            cell.backgroundColor = .blue
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
             return cell
             
-        case .recommendedTracks(_):
+        case .recommendedTracks(let viewModels):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier,
                                                                 for: indexPath) as? RecommendedTrackCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.backgroundColor = .orange
+            let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
             return cell
         }
     }
@@ -262,46 +275,31 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
            
        case 1:
            // ITEM
-           let item1 = NSCollectionLayoutItem(
+           let item = NSCollectionLayoutItem(
                layoutSize: NSCollectionLayoutSize(
                    widthDimension: .fractionalWidth(1),
-                   heightDimension: .fractionalHeight(0.2)
+                   heightDimension: .fractionalHeight(1)
                )
            )
            
-           let item2 = NSCollectionLayoutItem(
-               layoutSize: NSCollectionLayoutSize(
-                   widthDimension: .fractionalWidth(1),
-                   heightDimension: .fractionalHeight(0.6)
-               )
-           )
+           item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
            
-           let item3 = NSCollectionLayoutItem(
-               layoutSize: NSCollectionLayoutSize(
-                   widthDimension: .fractionalWidth(1),
-                   heightDimension: .fractionalHeight(0.2)
-               )
-           )
-           
-           item1.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-           item2.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-           item3.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-
            // GROUP
+           
            let verticalGroup = NSCollectionLayoutGroup.vertical(
-               layoutSize: NSCollectionLayoutSize(
-                   widthDimension: .fractionalWidth(1),
-                   heightDimension: .fractionalHeight(1)),
-               subitems: [item1, item2, item3]
-           )
+            layoutSize: NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(0.8),
+                heightDimension: .fractionalHeight(1)),
+            subitem: item,
+            count: 2)
            
            let horizontalGroup = NSCollectionLayoutGroup.horizontal(
                layoutSize: NSCollectionLayoutSize(
                    widthDimension: .fractionalWidth(0.9),
-                   heightDimension: .absolute(360)
+                   heightDimension: .absolute(450)
                ),
                subitem: verticalGroup,
-               count: 1)
+               count: 2)
            
            // SECTION
            let section = NSCollectionLayoutSection(group: horizontalGroup)
