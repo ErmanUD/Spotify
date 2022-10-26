@@ -91,21 +91,21 @@ final class PlaylistHeaderCollectionReusableView: UICollectionReusableView {
         nameLabel.frame = CGRect(
             x: 10,
             y: imageView.bottom,
-            width: width - 20,
+            width: width - 100,
             height: 44
         )
         
         descriptionLabel.frame = CGRect(
             x: 10,
             y: nameLabel.bottom,
-            width: width - 20,
+            width: width - 100,
             height: 44
         )
         
         ownerLabel.frame = CGRect(
             x: 10,
             y: descriptionLabel .bottom,
-            width: width - 20,
+            width: width - 100,
             height: 44
         )
         
